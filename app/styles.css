@@ -1,0 +1,138 @@
+:root {
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    --cls-orange: hsl(31, 77%, 52%);
+    --cls-teal: hsl(184, 100%, 22%);
+    --cls-green: hsl(179, 100%, 13%);
+
+    --text-color: hsla(0, 0%, 100%, 0.75);
+    --bg-color: hsl(0, 0%, 95%);
+
+    --font-size: 0.9375rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size);
+    height: 100vh;
+}
+
+p {
+    font-size: 0.8em;
+    line-height: 1.8em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+button {
+    border-radius: 100vh;
+    padding: 1em 2em;
+    margin-top: 2em;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+
+button:hover {
+    background-color: transparent;
+    color: var(--bg-color) !important;
+    border: 2px solid var(--bg-color);
+}
+
+/********** MAGIC **********/
+
+main {
+    margin: 0 auto;
+    max-width: var(--mobile-width);
+    padding: 5em 1em;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    padding: 2em;
+    margin: 0 auto;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    padding: 2em;
+}
+
+h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    margin: 1em 0;
+}
+
+.sedans {
+    border-radius: 10px 10px 0 0;
+    background-color: var(--cls-orange);
+}
+
+.sedans button {
+    color: var(--cls-orange);
+}
+
+.suvs {
+    background-color: var(--cls-teal);
+}
+
+.suvs button {
+    color: var(--cls-teal);
+}
+
+.luxury {
+    border-radius: 0 0 10px 10px;
+    background-color: var(--cls-green);
+}
+
+.luxury button {
+    color: var(--cls-green);
+}
+
+
+@media (min-width: 800px) {
+
+    main {
+        max-width: 1100px;
+    }
+
+    ul {
+        flex-direction: row;
+    }
+
+    .sedans {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .suvs {
+        border-radius: 0;
+    }
+
+    .luxury {
+        border-radius: 0 10px 10px 0;
+    }
+}
